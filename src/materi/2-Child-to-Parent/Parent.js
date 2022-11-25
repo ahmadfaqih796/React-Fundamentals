@@ -16,7 +16,7 @@ const Parent = () => {
         // data: pesan[val],
       });
     });
-    const jadwal = { dataChild };
+    // const jadwal = { dataChild };
     setCetak(dataChild);
     // setDataJadwal(dataChild);
     console.log(cetak);
