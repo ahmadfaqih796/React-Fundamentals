@@ -8,9 +8,9 @@ const Usestate = () => {
   // ini usestate tipe data boolean
   const [status, setStatus] = useState(false);
   // ini usestate tipe data array
-  const [array, setArray] = useState({});
+  const [array, setArray] = useState([]);
   // ini usestate tipe data object
-  const [object, setObject] = useState([]);
+  const [object, setObject] = useState({});
 
   const handleChange = (e) => {
     setNama(e.target.value);
@@ -19,8 +19,8 @@ const Usestate = () => {
 
   // ini kalau data banyak
   const handleGantiNama = () => {
-    setArray({ nama: nama, umur: umur });
-    object.push(array);
+    setObject({ nama: nama, umur: umur, status: false });
+    array.push(object);
     console.log(array);
     console.log(object);
   };
@@ -29,32 +29,35 @@ const Usestate = () => {
     <>
       <h1>Ini UseState</h1>
       <hr />
-      <label htmlFor="nama">nama</label>
-      <input
-        type="text"
-        name="nama"
-        onChange={(e) => setNama(e.target.value)}
-      />
-      <label htmlFor="umur">umur</label>
-      <input
-        type="number"
-        name="umur"
-        onChange={(e) => setUmur(e.target.value)}
-      />
+      <form>
+        <label htmlFor="nama">nama</label>
+        <input
+          type="text"
+          name="nama"
+          onChange={(e) => setNama(e.target.value)}
+        />
+        <label htmlFor="umur">umur</label>
+        <input
+          type="number"
+          name="umur"
+          onChange={(e) => setUmur(e.target.value)}
+        />
+        <button
+          type="submit"
+          onClick={
+            // ini cara pertama
+            // () => {
+            //   setNama("ini cara cepat pertama");
+            // }
+            // cara kedua
+            handleGantiNama
+          }
+        >
+          Ganti nama
+        </button>
+      </form>
       <h1>nama anda : {nama}</h1>
       <h1>umur anda : {umur}</h1>
-      <button
-        onClick={
-          // ini cara pertama
-          // () => {
-          //   setNama("ini cara cepat pertama");
-          // }
-          // cara kedua
-          handleGantiNama
-        }
-      >
-        Ganti nama
-      </button>
 
       <p>{JSON.stringify(object)}</p>
     </>
