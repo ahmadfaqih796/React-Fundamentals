@@ -12,10 +12,17 @@ const Usestate = () => {
   // ini usestate tipe data object
   const [object, setObject] = useState([]);
 
+  const handleChange = (e) => {
+    setNama(e.target.value);
+    setUmur(e.target.value);
+  };
+
   // ini kalau data banyak
   const handleGantiNama = () => {
     setArray({ nama: nama, umur: umur });
+    object.push(array);
     console.log(array);
+    console.log(object);
   };
 
   return (
@@ -34,7 +41,8 @@ const Usestate = () => {
         name="umur"
         onChange={(e) => setUmur(e.target.value)}
       />
-      <p>{JSON.stringify({nama, umur})}</p>
+      <h1>nama anda : {nama}</h1>
+      <h1>umur anda : {umur}</h1>
       <button
         onClick={
           // ini cara pertama
@@ -47,8 +55,8 @@ const Usestate = () => {
       >
         Ganti nama
       </button>
-      <h1>nama anda : {nama}</h1>
-      <h1>umur anda : {umur}</h1>
+
+      <p>{JSON.stringify(object)}</p>
     </>
   );
 };
