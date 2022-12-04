@@ -14,21 +14,35 @@ const Usestate = () => {
 
   // ini kalau data banyak
   const handleGantiNama = () => {
-    setNama("faqih");
+    setArray({ nama: nama, umur: umur });
+    console.log(array);
   };
 
   return (
     <>
       <h1>Ini UseState</h1>
       <hr />
+      <label htmlFor="nama">nama</label>
+      <input
+        type="text"
+        name="nama"
+        onChange={(e) => setNama(e.target.value)}
+      />
+      <label htmlFor="umur">umur</label>
+      <input
+        type="number"
+        name="umur"
+        onChange={(e) => setUmur(e.target.value)}
+      />
+      <p>{JSON.stringify({nama, umur})}</p>
       <button
         onClick={
           // ini cara pertama
           // () => {
           //   setNama("ini cara cepat pertama");
           // }
-					// cara kedua
-					handleGantiNama
+          // cara kedua
+          handleGantiNama
         }
       >
         Ganti nama
