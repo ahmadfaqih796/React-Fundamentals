@@ -1,6 +1,6 @@
 import React from "react";
 
-const Example = () => {
+const SpreadSyntaxAllow = () => {
   const identitas = {
     nama: "Faqih",
     umur: 22,
@@ -11,7 +11,7 @@ const Example = () => {
     alamat: "Jakarta",
   };
   console.log(kartuNama);
-  return <div>Example</div>;
-}
+  return <div>SpreadSyntaxAllow</div>;
+};
 
-export default Example;
+export default SpreadSyntaxAllow;
